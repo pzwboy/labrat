@@ -1,0 +1,277 @@
+body {
+	background-color: #1c1c1c;
+	margin: 0px;
+	padding: 0px;
+	font-family: arial, helvetica, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:focus {
+	outline: none;
+}
+
+img {
+	border: none;
+}
+
+.contentwrapper, .footerwrapper {
+	background-image: url( ../img/background_top.jpg );
+	min-height: 635px;
+	padding-left: 16px;
+	padding-right: 16px;
+	min-width: 814px;
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
+.contentwrapper .content, .footerwrapper .footer {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footerwrapper {
+	background-image: url( ../img/background_footer.jpg );
+	min-height: 253px;
+}
+
+.header {
+	height: 93px;
+	position: relative;
+	margin-bottom: 7px;
+}
+
+.header #p2logo {
+	display: block;
+	background-image: url( ../img/Portal2_comiclogo.png );
+	background-repeat: no-repeat;
+	width: 220px;
+	height: 84px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.header .linkarea {
+	position: absolute;
+	right: 12px;
+	top: 0px;
+	width: 440px;
+	height: 88px;
+}
+
+div#activepagebg {
+	position: absolute;
+	z-index: 2;
+	top: -1px;
+	right: 0px;
+	background-image: url( ../img/pagenum_highlight_over.png );
+	width: 112px;
+	height: 82px;
+	background-repeat: no-repeat;
+	background-position: top;
+}
+
+div#activepagebg.singledigit {
+	background-position: bottom;
+}
+
+div.pagelinks {
+	position: absolute;
+	right: 0px;
+	top: 25px;
+	
+	color: #959595;	
+	z-index: 10;
+}
+
+div.pagelinksp2 {
+	position: absolute;
+	right: 0px;
+	top: 53px;	
+	color: #959595;	
+	z-index: 10;
+}
+
+div.pagelinkholder {
+	float: right;
+	width: 20px;
+	margin-left: 10px;
+	text-align: center;
+}
+
+div.pagelinkholder.singledigit {
+	width: 11px;
+}
+
+div.pagelinksp2 div.pagelinkholder {
+	margin-left: 11px;
+}
+
+div.comingsoonteaser {
+	position: absolute;
+	right: 5px;
+	top: 52px;
+	text-align: right;
+}
+
+a.pagelink {
+	color: #959595;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+a.pagelink.active {
+	color: #2db2e6
+}
+
+a.pagelink:focus {
+	outline: none;
+}
+
+.comic {
+	min-height: 1000px;
+}
+
+#comicimg {
+	vertical-align: bottom;
+}
+
+.comicnav {
+	background-color: #ffffff;
+	height: 40px;
+	background-image: url( ../img/white_block.gif );
+	background-position: bottom;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.comicnav .previous {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 120px;
+}
+
+.comicnav .next {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 120px;
+	text-align: right;
+}
+
+.comicnav a {
+	display: block;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	background-position: top;
+	height: 40px;
+	background-repeat: no-repeat;
+}
+
+.comicnav a:hover {
+	background-position: bottom;
+}
+
+a#comicnavlink_previous {
+	background-image: url( ../img/btn_previous.png );
+}
+
+a#comicnavlink_next {
+	background-image: url( ../img/btn_next.png );
+	background-position: right top;
+}
+
+a#comicnavlink_next:hover {
+	background-position: right bottom;
+}
+
+.footerlink_ctn {
+	float:left;
+	
+}
+
+.footerlinks.extras .footerlink_ctn {
+	margin-left: 5px;
+}
+
+.footerlink img {
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+.extras_area {
+	padding: 26px;
+}
+
+.extras_header {
+	margin-bottom: 20px;
+}
+
+.extra {
+	float: left;
+	margin-right: 24px;
+}
+
+a.bodyimglink img, a.bodylink img, img.extra_link_img {
+	border: 1px solid #287897;
+}
+
+a.bodyimglink:hover img, a.bodylink:hover img {
+	border-color: #ffffff;
+}
+
+.bodylink_ctn {
+	width: 136px;
+	padding-left: 4px;
+}
+
+a.bodylink {
+	color: #2db2e6;
+	font-weight: bold;
+	font-size: 10px;
+}
+
+.wallpaper_holder {
+	background-color: #287897;
+	padding: 1px;
+	float: left;
+	
+	margin-bottom: 20px;
+}
+
+.wallpaper_holder.left {
+	margin-right: 20px;
+}
+
+.wallpaper_choices {
+	height: 24px;
+	line-height: 24px;
+	font-weight: bold;
+	font-size: 10px;
+	padding-left: 5px;
+}
+
+.wallpaper_choices a {
+	color: #ffffff;
+}
+
+.wallpaper_choices a:hover, a.bodylink:hover {
+	text-decoration: underline;
+}
+
+.flags {
+	text-align: center;
+}
+
+.flags a {
+	margin-right: 9px;
+}
