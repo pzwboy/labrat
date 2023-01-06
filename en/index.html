@@ -1,0 +1,227 @@
+<!DOCTYPE html><html><head><meta name="360-analysis-id" content="3e3e362z1i2z3131"><!--!‭‬‬‭‬‬‭‫‪‬‏‏‫‭‪‬‏‏‭‪‫‭‪‫--><meta charset="utf-8"><!--!‭‬‬‭‬‬‭‫‪‬‏‏‫‭‪‬‏‏‭‪‫‭‪‫-->
+	<title>LAB RAT</title>
+	<link rel="image_src" href="assets/content_pdfcover_temp.jpg">
+	<meta name="description" content="Valve’s new comic Portal 2: Lab Rat bridges the gap between the events of the video games Portal and Portal 2 and tells an exciting new story set in the world of Aperture Science"><!--!‭‬‬‭‬‬‭‫‪‬‏‏‫‭‪‬‏‏‭‪‫‭‪‫-->
+	
+	<link rel="stylesheet" href="css/comic.css" type="text/css">
+	<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script><!--!‭‬‬‭‬‬‭‫‪‬‏‏‫‭‪‬‏‏‭‪‫‭‪‫-->
+	<script type="text/javascript" src="js/jquery.history.js"></script><!--!‭‬‬‭‬‬‭‫‪‬‏‏‫‭‪‬‏‏‭‪‫‭‪‫-->
+	
+	<script type="text/javascript">
+		var g_curpage = 1;
+		var g_bPageNavEvent = false;
+
+		var MAX_PAGES = 27;
+	
+		function OnHashChange( hash )
+		{
+			var pagenum = 1;
+			if ( hash )
+				pagenum = parseInt( hash );
+			if ( pagenum < 1 || pagenum > MAX_PAGES )
+				pagenum = 1;
+
+			SetPageActive( pagenum );
+		}
+		$(document).ready(function() {
+			$.history.init( OnHashChange );
+			$(document).keydown( OnKeyPress );
+			$('a.comicnavlink').click( function() { g_bPageNavEvent = true; return true; } );
+			$('#comiclink').click( function() { g_bPageNavEvent = true; return true; } );
+
+			
+		} );
+
+		function SetPageActive( pagenum )
+		{
+
+			$('a.pagelink.active').removeClass('active');
+			$('#pagelink_' + pagenum ).addClass('active');
+
+			if ( pagenum <= 15 )
+			{
+				var bgoffset = -44 + ( 15 - pagenum ) * 30;
+				if ( pagenum < 10 )
+					bgoffset -= ( 10 - pagenum ) * 9 - 1;
+				$('#activepagebg')[0].style.right = bgoffset + 'px';
+				$('#activepagebg')[0].style.top = '-1px';
+			}
+			else
+			{
+				var bgoffset = -44 + ( 27 - pagenum ) * 31;
+				$('#activepagebg')[0].style.right = bgoffset + 'px';
+				$('#activepagebg')[0].style.top = '27px';
+			}
+			if ( pagenum < 10 )
+				$('#activepagebg').addClass( 'singledigit' );
+			else
+				$('#activepagebg').removeClass( 'singledigit' );
+
+			$('#comicimg')[0].src = PageURL( pagenum );
+			$('#preloadimg')[0].src = PageURL( pagenum + 1 );
+
+			if ( pagenum > 1 )
+			{
+				$('#comicnavlink_previous').show()[0].href='#' + ( pagenum - 1 );
+			}
+			else
+			{
+				$('#comicnavlink_previous').hide();
+			}
+
+			if ( pagenum < MAX_PAGES )
+			{
+				$('#comicnavlink_next').show()[0].href='#' + ( pagenum + 1 );
+				$('#comiclink')[0].href='#' + ( pagenum + 1 );
+				$('#comiclink')[0].style.cursor='';
+			}
+			else
+			{
+				$('#comicnavlink_next').hide();
+				$('#comiclink')[0].href='javascript://';
+				$('#comiclink')[0].style.cursor='default';
+			}
+
+			g_curpage = pagenum;
+
+			if ( g_bPageNavEvent )
+			{
+				g_bPageNavEvent = false;
+				var comictop = $('#comicimg').offset().top - 20;
+				if ( $(window).scrollTop() > comictop )
+					$(window).scrollTop( comictop );
+			}
+		}
+
+		function PageURL( pagenum )
+		{
+			if ( pagenum > MAX_PAGES )
+				pagenum = 0;
+			else
+				pagenum--;	
+
+							if ( pagenum < 15 ) 
+					return 'p' + (pagenum < 10 ? '0' : '' ) + pagenum + '.jpg';
+				else
+					return 'p' + pagenum + '.jpg';
+						
+		}
+		function OnKeyPress( event )
+		{
+			if ( event.keyCode == 37 )
+			{
+				if ( g_curpage > 1 )
+				{
+					g_bPageNavEvent = true;
+					window.location.href = '#' + (g_curpage - 1);
+				}
+				event.preventDefault();
+			}
+			else if ( event.keyCode == 39 || event.which == 32 )
+			{
+				if ( g_curpage < MAX_PAGES )
+				{
+					g_bPageNavEvent = true;
+					window.location.href = '#' + (g_curpage + 1);
+				}
+				event.preventDefault();
+			}
+		}
+	</script><!--!‭‬‬‭‬‬‭‫‪‬‏‏‫‭‪‬‏‏‭‪‫‭‪‫-->
+</head>
+<body>
+	
+<div class="contentwrapper">
+	<div class="content">
+		<div class="header">
+			<a id="p2logo" href="http://www.thinkwithportals.com/comic/">
+			</a>
+			<div class="linkarea">
+				<div id="activepagebg"></div>
+				<div class="pagelinks">
+											<div class="pagelinkholder "><a class="pagelink" rel="history" href="#15" id="pagelink_15">15</a></div>
+											<div class="pagelinkholder "><a class="pagelink" rel="history" href="#14" id="pagelink_14">14</a></div>
+											<div class="pagelinkholder "><a class="pagelink" rel="history" href="#13" id="pagelink_13">13</a></div>
+											<div class="pagelinkholder "><a class="pagelink" rel="history" href="#12" id="pagelink_12">12</a></div>
+											<div class="pagelinkholder "><a class="pagelink" rel="history" href="#11" id="pagelink_11">11</a></div>
+											<div class="pagelinkholder "><a class="pagelink" rel="history" href="#10" id="pagelink_10">10</a></div>
+											<div class="pagelinkholder singledigit"><a class="pagelink" rel="history" href="#9" id="pagelink_9">9</a></div>
+											<div class="pagelinkholder singledigit"><a class="pagelink" rel="history" href="#8" id="pagelink_8">8</a></div>
+											<div class="pagelinkholder singledigit"><a class="pagelink" rel="history" href="#7" id="pagelink_7">7</a></div>
+											<div class="pagelinkholder singledigit"><a class="pagelink" rel="history" href="#6" id="pagelink_6">6</a></div>
+											<div class="pagelinkholder singledigit"><a class="pagelink" rel="history" href="#5" id="pagelink_5">5</a></div>
+											<div class="pagelinkholder singledigit"><a class="pagelink" rel="history" href="#4" id="pagelink_4">4</a></div>
+											<div class="pagelinkholder singledigit"><a class="pagelink" rel="history" href="#3" id="pagelink_3">3</a></div>
+											<div class="pagelinkholder singledigit"><a class="pagelink" rel="history" href="#2" id="pagelink_2">2</a></div>
+											<div class="pagelinkholder singledigit"><a class="pagelink" rel="history" href="#1" id="pagelink_1">1</a></div>
+									</div>
+									<div class="pagelinksp2">
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#27" id="pagelink_27">27</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#26" id="pagelink_26">26</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#25" id="pagelink_25">25</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#24" id="pagelink_24">24</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#23" id="pagelink_23">23</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#22" id="pagelink_22">22</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#21" id="pagelink_21">21</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#20" id="pagelink_20">20</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#19" id="pagelink_19">19</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#18" id="pagelink_18">18</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#17" id="pagelink_17">17</a></div>
+													<div class="pagelinkholder "><a class="pagelink" rel="history" href="#16" id="pagelink_16">16</a></div>
+											</div>
+							</div>
+		</div>
+		<div class="comic">
+			<a id="comiclink" href="">
+				<img id="comicimg">
+			</a>
+		</div>
+		<div style="display: none;">
+			<img id="preloadimg">
+		</div>
+		<div class="comicnav">
+			<div class="previous">
+				<a class="comicnavlink" id="comicnavlink_previous" href="">
+					&nbsp;
+				</a>
+			</div>
+			<div class="next">
+				<a class="comicnavlink" id="comicnavlink_next" href="">
+					&nbsp;
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footerwrapper">
+	<div class="footer">
+		<div class="footerlinks">
+					<img src="img/btn_thinkwith.png">
+				</a>
+			</div>
+			<div style="clear: left;"></div>
+			<div style="display: none;">
+				<img src="img/btn_preorder_over.png">
+				<img src="img/btn_downloads_over.png">
+				<img src="img/btn_share_over.png">
+				<img src="img/btn_thinkwith_over.png">
+			
+			</div>
+		</div>
+		<div class="legal">
+			<img src="img/footer_valve.png">
+		</div>
+		<div class="flags">
+							<a href="/en">
+					<img src="img/en_btn_on.gif">
+				</a>
+							<a href="/zh-cn">
+					<img src="img/zh-cn_btn_off.gif">
+				</a>
+					</div>
+	</div>
+</div>
+
+
+
+</body><!--!‭‬‬‭‬‬‭‫‪‬‏‏‫‭‪‬‏‏‭‪‫‭‪‫--></html><!--!‭‬‬‭‬‬‭‫‪‬‏‏‫‭‪‬‏‏‭‪‫‭‪‫-->
